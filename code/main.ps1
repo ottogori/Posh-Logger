@@ -1,4 +1,5 @@
 . "$PSScriptRoot\Logger.ps1"
+. "$PSScriptRoot\PathFunctions.ps1"
 
 Function Main {
 [CmdletBinding()]
@@ -21,7 +22,7 @@ param(
         # Initialize log
         $global:logLevel = "Debug"   # Possible values: Error, Warning, Info and Debug
         New-OPSLogger -logPath "$PSScriptRoot\logs" -actionName 'Automation' | Out-Null
-        Delete-OPSOldFiles -path "$PSScriptRoot\logs" -days 90 -filter *.log -ErrorAction "SilentlyContinue"
+        Delete-OPSOldFiles -path "$PSScriptRoot\logs" -days 90 -filter *.log -ErrorAction $DebugPreference
         
         try {          
                 
@@ -31,15 +32,17 @@ param(
             Add-OPSLoggerInput "Checking if parameters were set" -logLevel Debug -invocation $MyInvocation
 
             Add-OPSLoggerInput "Step $global:stepExecCmd of $global:totalSteps - Initializing Automation process - Loading MainConfig.xml" -summary -logLevel Info -invocation $MyInvocation
-            #Call XML loading procedure
+            Write-Host $sConfigFilePath
 
             Add-OPSLoggerInput "Step $global:stepValidate of $global:totalSteps - Initializing Validation process" -summary -logLevel Info -invocation $MyInvocation
             #Call Validation procedure      
 
         } catch [System.Exception] {
-            throw Add-OPSLoggerException -detailedInput "An error has occured initializing the main process: $($_.Exception.Message)" `
-                                        -summaryInput "Step $global:stepInitialize of $global:totalSteps - An error has occured while initializing package building process. Could not proceed with execution." `
+            throw Add-OPSLoggerException -detailedInput "An error has occured executing the main process: $($_.Exception.Message)" `
+                                        -summaryInput "An error has occured while initializing package building process. Could not proceed with execution." `
                                         -step "Package building initialization process" -invocation $MyInvocation
         }
     }
 }
+
+Main -sConfigFilePath D:\git\Posh-Logger
