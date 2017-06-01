@@ -199,7 +199,7 @@ Examplo:
 Com os conteudos mostrados abaixo, onde foi incluída uma chamada da função inexistente "asd" para ilustrar o terceiro caso, erro.
 ![](./img/log.png)
 
-Caso queira interpretar, código completo da solução segue abaixo:
+Caso você também seja um devorador de bits e queira interpretar, o código completo da solução segue abaixo:
 
 ~~~powershell
 <#New-OPSLogger
