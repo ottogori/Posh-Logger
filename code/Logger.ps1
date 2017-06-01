@@ -7,8 +7,8 @@
 
 .DESCRIPTION
     Creates two new log files on $logPath directory, one for detailed log and one for summary log, following the naming convention below.
-    [Current date as dd-MM-yyyy] [$packageName] detailed.log
-    [Current date as dd-MM-yyyy] [$packageName] summary.log
+    [Current date as dd-MM-yyyy] [$actionName] detailed.log
+    [Current date as dd-MM-yyyy] [$actionName] summary.log
     Examples:
         11-02-2016 AllinOne_5.0.3.5_Update detailed.log
         11-02-2016 AllinOne_5.0.3.5_Update summary.log
@@ -19,7 +19,7 @@
 .PARAMETER logPath
     Path to where the log file will be created
     
-.PARAMETER packageName
+.PARAMETER actionName
     Name of the package to use as part of the file name to identify which package processing created the log file
     
 .PARAMETER alwaysReplace
@@ -36,8 +36,8 @@
     Should be run on systems with PS >= 3.0
 
 .INPUT EX
-    New-OPSLogger -logPath "C:\logs" -packageName "AllinOne_5.0.3.5_Update"
-    New-OPSLogger -logPath "C:\logs" -packageName "AllinOne_5.0.3.5_Update" -alwaysReplace
+    New-OPSLogger -logPath "C:\logs" -actionName "AllinOne_5.0.3.5_Update"
+    New-OPSLogger -logPath "C:\logs" -actionName "AllinOne_5.0.3.5_Update" -alwaysReplace
     
 .OUTPUTS
     If passthru is set, a Dictionary with a SummaryLogFile member containg the log path, the full path to the newly created summary log file
@@ -50,12 +50,12 @@ function New-OPSLogger{
 [CmdletBinding()]
 param(
     [ValidateNotNullOrEmpty()][string]$logPath = $(throw "logPath is mandatory and was not set."),
-    [ValidateNotNullOrEmpty()][string]$packageName = $(throw "packageName is mandatory and was not set."),
+    [ValidateNotNullOrEmpty()][string]$actionName = $(throw "actionName is mandatory and was not set."),
     [switch]$alwaysReplace,
     [switch]$passthru
 )
-    $summaryLogFile = New-OPSLogFile -logPath $logPath -packageName $packageName -logType summarized -alwaysReplace:$alwaysReplace
-    $detailedLogFile = New-OPSLogFile -logPath $logPath -packageName $packageName -logType detailed -alwaysReplace:$alwaysReplace
+    $summaryLogFile = New-OPSLogFile -logPath $logPath -actionName $actionName -logType summarized -alwaysReplace:$alwaysReplace
+    $detailedLogFile = New-OPSLogFile -logPath $logPath -actionName $actionName -logType detailed -alwaysReplace:$alwaysReplace
     
     $global:logger = @{
         LogPath = $logPath

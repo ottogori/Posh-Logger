@@ -4,7 +4,7 @@
 
 .DESCRIPTION
     Creates a new log file on $logPath directory following the naming convention below.
-    [Current date as dd-MM-yyyy] [$packageName] [$logType].log
+    [Current date as dd-MM-yyyy] [$actionName] [$logType].log
     Examples:
         11-02-2016 Update detailed.log
         11-02-2016 Update summary.log
@@ -15,13 +15,13 @@
 .PARAMETER logPath
     Path to where the log file will be created
     
-.PARAMETER packageName
+.PARAMETER actionName
     Name of the package to use as part of the file name to identify which package processing created the log file
     
 .PARAMETER logType
     Type of the log (summary or detailed)
     
-    This is an optional parameter. If not included, the log file name will be just [Current date as dd-MM-yyyy] [$packageName].log
+    This is an optional parameter. If not included, the log file name will be just [Current date as dd-MM-yyyy] [$actionName].log
     
 .PARAMETER alwaysReplace
     This is a switch parameter. If set, will always replace log file if one exists with the same name.
@@ -34,8 +34,8 @@
     Should be run on systems with PS >= 3.0
 
 .INPUT EX
-    New-OPSLogFile -logPath "C:\logs" -packageName "AllinOne_5.0.3.5_Update" -logType detailed
-    New-OPSLogFile -logPath "C:\logs" -packageName "AllinOne_5.0.3.5_Update" -logType summary -alwaysReplace
+    New-OPSLogFile -logPath "C:\logs" -actionName "AllinOne_5.0.3.5_Update" -logType detailed
+    New-OPSLogFile -logPath "C:\logs" -actionName "AllinOne_5.0.3.5_Update" -logType summary -alwaysReplace
     
 .OUTPUTS
     String with the full path to the newly created log file
@@ -45,17 +45,17 @@ function New-OPSLogFile{
 [CmdletBinding()]
 param(
     [ValidateNotNullOrEmpty()][string]$logPath = $(throw "logPath is mandatory and was not set."),
-    [ValidateNotNullOrEmpty()][string]$packageName = $(throw "packageName is mandatory and was not set."),
+    [ValidateNotNullOrEmpty()][string]$actionName = $(throw "actionName is mandatory and was not set."),
     [string]$logType,
     [switch]$alwaysReplace
 )
     [string]$dateString = (Get-Date -UFormat %d-%b-%Y)
 
     if ($logType){
-        [string]$logFileName = "$dateString $packageName $logType"
+        [string]$logFileName = "$dateString $actionName $logType"
     }
     else {
-        [string]$logFileName = "$dateString $packageName"
+        [string]$logFileName = "$dateString $actionName"
     }
     [string]$logFullName = "$logFileName.log"
     
