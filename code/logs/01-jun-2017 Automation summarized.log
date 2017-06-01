@@ -1,0 +1,4 @@
+[Info]: 01-06-2017 12:06:02.4257 - Step 1 of 3 - Initializing Automation process
+[Info]: 01-06-2017 12:06:02.4352 - Step 2 of 3 - Initializing Automation process - Loading MainConfig.xml
+[Info]: 01-06-2017 12:06:02.4457 - Step 3 of 3 - Initializing Validation process
+[Error]: 01-06-2017 12:06:02.6157 - An error has occured while initializing package building process. Could not proceed with execution.

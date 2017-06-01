@@ -1,14 +1,5 @@
 ﻿. "$PSScriptRoot\Logger.ps1"
 
-function Test-ValidPath([string]$PathToTest){
-    
-    if(Test-Path $PathToTest){
-        return $PathToTest
-    } else {
-        Throw [System.Exception] "$PathToTest not found"
-    }
-}
-
 function New-OPSDirectory {
     [CmdletBinding()]
     Param(

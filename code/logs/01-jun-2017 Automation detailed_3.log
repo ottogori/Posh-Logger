@@ -1,0 +1,6 @@
+[Info]: 01-06-2017 12:01:21.0168 - [Delete-OPSOldFiles] Deleting files from D:\git\Posh-Logger\code\logs\*.log older then 03/03/2017 12:01:20 (90)...
+[Info]: 01-06-2017 12:01:21.0499 - [Main] Step 1 of 3 - Initializing Automation process
+[Debug]: 01-06-2017 12:01:21.0614 - [Main] Changed PowerShell woking directory to D:\git\Posh-Logger\code
+[Debug]: 01-06-2017 12:01:21.0638 - [Main] Checking if parameters were set
+[Info]: 01-06-2017 12:01:21.0654 - [Main] Step 2 of 3 - Initializing Automation process - Loading MainConfig.xml
+[Info]: 01-06-2017 12:01:21.1308 - [Main] Step 3 of 3 - Initializing Validation process

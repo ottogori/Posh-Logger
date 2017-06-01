@@ -30,7 +30,7 @@
     
 .NOTES
     Author: Otto Gori
-    Data: 07/2016
+    Data: 06/2017
     testVersion: 0.0
     Application user must have permition to create and rename files on the directory specified by $logPath parameter
     Should be run on systems with PS >= 3.0
@@ -156,7 +156,7 @@ param(
     
 .NOTES
     Author: Otto Gori
-    Data: 07/2016
+    Data: 06/2017
     testVersion: 0.1
     Application user must have write permition to the log file
     Should be run on systems with PS >= 3.0
@@ -288,7 +288,7 @@ param(
     
 .NOTES
     Author: Otto Gori
-    Data: 07/2016
+    Data: 06/2017
     testVersion: 0.0
     Application user must have write permition to the log file
     Should be run on systems with PS >= 3.0
