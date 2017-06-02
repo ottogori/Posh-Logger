@@ -1,7 +1,7 @@
 # Posh-Logger
 Logging module written in Power Shell
 
-Originalmente essa solução foi concebida para atender a necessidade de “logar” a execução de um procedimento qualquer, podendo ser importada em qualquer solução onde o código Posh possa ser importado. Essa solução foi originalmente escrita num tempo vago entre um projeto e outro para manter minha mente ocupada e o skill de desenvolvimento não deixar de ser usado. Toda sua extensão foi arquitetada e escrita em 4 dias completos de trabalho, sendo esta a primeira entrega da solução como um produto. 
+Originalmente essa solução foi concebida para atender a necessidade de “logar” a execução de um procedimento qualquer, podendo ser importada em qualquer solução onde o código Posh possa ser importado. Essa solução foi originalmente escrita num tempo vago entre um projeto e outro para manter minha mente ocupada e a skill de desenvolvimento não deixar de ser usada. Toda sua extensão foi arquitetada e escrita em 4 dias completos de trabalho, sendo esta a primeira entrega da solução como um produto. 
 
 Considerando o enorme esforço do mundo Microsoft para a integração com sistemas Linux, podemos hoje afirmar que essa solução pode ser importada em diversas plataformas e soluções nas mais variadas linguagens e arquiteturas.
 
