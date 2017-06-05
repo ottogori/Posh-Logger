@@ -199,6 +199,19 @@ Examplo:
 Com os conteudos mostrados abaixo, onde foi incluída uma chamada da função inexistente "asd" para ilustrar o terceiro caso, erro.
 ![](./img/log.png)
 
+Para incluir mais dados nos logs, basta usar as chamadas:
+~~~powershell
+Add-OPSLoggerInput -logInput "Initiating foobar" -logLevel Info -silent -invocation $MyInvocation
+~~~
+
+Ou:
+~~~powershell
+Add-OPSLoggerException "Error on foobar" -step "foobar" -invocation $MyInvocation
+~~~
+Para o caso de erro.
+
+-
+
 Caso você também seja um devorador de bits e queira interpretar, o código completo da solução segue abaixo:
 
 ~~~powershell
