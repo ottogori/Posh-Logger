@@ -1,11 +1,11 @@
 # Posh-Logger
 Logging module written in Power Shell
 
-Originalmente essa solução foi concebida para atender a necessidade de “logar” a execução de um procedimento qualquer, podendo ser importada em qualquer solução onde o código Posh possa ser importado. Essa solução foi originalmente escrita num tempo vago entre um projeto e outro para manter minha mente ocupada e a skill de desenvolvimento não deixar de ser usada. Toda sua extensão foi arquitetada e escrita em 4 dias completos de trabalho, sendo esta a primeira entrega da solução como um produto. 
+Originalmente essa solução foi concebida para atender a necessidade de “logar” a execução de um procedimento qualquer, podendo ser importada em qualquer solução na qual o código Posh possa ser importado. A solução foi originalmente escrita num tempo vago entre um projeto e outro para manter minha mente ocupada e a skill de desenvolvimento não deixar de ser usada. Toda sua extensão foi arquitetada e escrita em quatro dias completos de trabalho, e este post é a primeira entrega da solução como um produto. 
 
 Considerando o enorme esforço do mundo Microsoft para a integração com sistemas Linux, podemos hoje afirmar que essa solução pode ser importada em diversas plataformas e soluções nas mais variadas linguagens e arquiteturas.
 
-Você pode obtê-la clonando o repositório: https://github.com/ottogori/Posh-Logger.git
+Para obtê-la, é só clonar o repositório: https://github.com/ottogori/Posh-Logger.git
 
 Junto ao código já foi escrito um extenso “how to” por meio dos comentários formalizados no “help” de cada uma das funções complexas, portanto, me conterei a demonstrar o funcionamento de seus módulos principais, sem tomar muito do texto com a explicação dos procedimentos encapsulados e/ou secundários. Esses "how to" podem ser obtidos usando a função `get-help` de cada um dos procedimentos. Um exemplo disso é mostrado abaixo:
 ~~~powershell
@@ -61,7 +61,7 @@ Junto ao código já foi escrito um extenso “how to” por meio dos comentári
     }
 ~~~
 
-Dito isto, vamos à inicialização do procedimento de logging que demanda os parâmetros demonstrados abaixo, e é inicializado na ultima linha do trecho
+Dito isto, vamos à inicialização do procedimento de logging que demanda os parâmetros demonstrados abaixo e é inicializado na última linha do trecho
 
 ~~~powershell
     # Set power shell stream handling preferences
@@ -82,11 +82,11 @@ Dito isto, vamos à inicialização do procedimento de logging que demanda os pa
 
 A arquitetura desta solução permite que você crie loggin com complexidades diferentes simultaneamente.
 
-Isso se dá pela presença da possibilidade de logar em modo “debug” ou “info” que permite um log detalhado e um outro que é mais simples e mais “user friendly”, podendo este ser anexado em um e-mail, por exemplo, no fim da execução de um procedimento de deploy ou de preparação de um ambiente. Uma terceira possibilidade é o log em estado de erro, que além do comentário do desenvolvedor acompanhará a mensagem original de erro, permitindo um diagnóstico assertivo do problema.
+Isso se dá pela presença da possibilidade de logar em modo “debug” ou “info” que permite um log detalhado e outro que é mais simples e mais “user friendly”, podendo ser anexado em um e-mail, por exemplo, no fim da execução de um procedimento de deploy ou de preparação de um ambiente. Uma terceira possibilidade é o log em estado de erro, que além do comentário do desenvolvedor acompanhará a mensagem original de erro, permitindo um diagnóstico assertivo do problema.
 
-O log em nível debug inclui desde o step de execução listado pelo desenvolvedor, até a função onde foi originado o erro. Já o log em nível Informativo é mais verbal, mais facil de interpretar, podendo então ser usado para um informe de business, caso seja (em rara situação) requerido.
+O log em nível debug inclui desde o step de execução listado pelo desenvolvedor até a função na qual foi originado o erro. Já o log em nível Informativo é mais verbal, mais fácil de interpretar, podendo então ser usado para um informe de business, caso seja (em rara situação) requerido.
 
-A solução inclusive inclui um procedimento de rotação dos logs criados, filtrando-os por data e nome.
+A solução inclui também um procedimento de rotação dos logs criados, filtrando-os por data e nome.
 
 ~~~powershell
     function Delete-OPSOldFiles {
@@ -993,4 +993,8 @@ param(
 
 ~~~
 
+Ficou alguma dúvida ou tem alguma observação a fazer? Aproveite os campos abaixo. Até a próxima!
 
+--
+
+Tem a cultura DevOps e gostaria de fazer parte de um time incrível? Clique aqui. [www.concrete.com.br/vagas]
